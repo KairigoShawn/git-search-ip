@@ -34,7 +34,7 @@
       Search
     </button>
   </div>
-  <div class="output" *ngIf="userInfo && userInfo.login; then userinfo else null"></div>
+  <div class="output" *ngIf="userInfo && userInfo.login; then userinfo else userrepo"></div>
   <ng-template #userinfo>
     <img src="{{userInfo.avatar_url}}" alt="">
     <h2>{{ userInfo.name || userInfo.login }}</h2>
@@ -43,5 +43,9 @@
     <p>Repositories: {{userInfo.public_repos}}</p>
 
   </ng-template>
-  
+  <ng-template #userrepo>
+    <div *ngFor="let repo of userRepo">
+      <p>{{repo}}</p>
+    </div>
+  </ng-template>
 </body>
