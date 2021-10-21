@@ -2,8 +2,19 @@
   <h1>
     Welcome to the github user search enginge. <br />
     This application will allow you to seach for users as well as repositories
-    on github. <br /><br />
-    SEARCH FOR USER HERE
+    on github.</h1> <br /><br />
+
+    <h1>PLEASE SELECT WHAT YOU WISH TO SEARCH FOR:</h1>
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" >
+      <label ngbButtonLabel class="btn-primary">
+        <input ngbButton type="radio" value="user_info" [(ngModel)]="radio.userInfo" (change)="onRadioSelected($event)"> User
+      </label>
+      <label ngbButtonLabel class="btn-primary">
+        <input ngbButton type="radio" value="user_repository" [(ngModel)]="radio.usersRepos" (change)="onRadioSelected($event)"> Repositories
+      </label>
+    </div>
+
+    <h1>SEARCH FOR USER AND REPOSITORIES HERE
   </h1>
 
   <div class="input-group input-group-lg">
@@ -17,15 +28,11 @@
     <button
       ngbButton
       class="btn btn-outline-secondary"
-      (click)="findUser(gitSearch.value)"
+      (click)="searchGithub(gitSearch.value)"
       type="button"
     >
       Search
     </button>
   </div>
-
-  <div class="output">
-    {{ userName }}
-    <h2>{{ userName.name || userName.login }}</h2>
-  </div>
+  
 </body>
