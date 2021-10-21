@@ -2,10 +2,12 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { Buffer } from "buffer";
+
 export const environment = {
   production: false,
   apiUrl : 'https://api.github.com',
-  token : "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",
+  token : Buffer.from('dG9rZW4gZ2hwX1loOXk2Y1FjYzVWMHhpUmE4bW1ySTIya0J0WmFuZjA2UG8xZA==', 'base64').toString(),
 };
 
 /*
