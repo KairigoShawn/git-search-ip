@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileService {
 
-  private BASE_URL = 'https://api.github.com';
+  private BASE_URL = 'https://api.github.com/users';
   private token = environment.token;
 
   constructor(private http: HttpClient)  {}
@@ -16,9 +16,10 @@ export class ProfileService {
 
   async user(username?: string){
     const option = {
-      headers: {Authorization: this.token}
+      headers: { Authorization: this.token }
     };
 
-    return this.http.get(this.BASE_URL + `/users/${username}`, option);
+    return this.http.get(this.BASE_URL + `/${username}`, option);
   }
+
 }
