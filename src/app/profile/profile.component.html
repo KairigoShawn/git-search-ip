@@ -1,29 +1,31 @@
-<h1>
-  Welcome to the github user search enginge. <br />
-  This application will allow you to seach for users as well as repositories on
-  github. <br /><br />
-  SEARCH FOR USER HERE
-</h1>
+<body>
+  <h1>
+    Welcome to the github user search enginge. <br />
+    This application will allow you to seach for users as well as repositories
+    on github. <br /><br />
+    SEARCH FOR USER HERE
+  </h1>
 
-<div class="input-group input-group-lg">
-  <input
-    #gitSearch
-    type="text"
-    class="form-control"
-    aria-label="Sizing example inut"
-    aria-describedby="inputGroup-sizing-lg"
-  />
-  <button
-    ngbButton
-    class="btn btn-outline-secondary"
-    (click)="findUser(gitSearch.value)"
-    type="button"
-  >
-    Search
-  </button>
-</div>
+  <div class="input-group input-group-lg">
+    <input
+      #gitSearch
+      type="text"
+      class="form-control"
+      aria-label="Sizing example inut"
+      aria-describedby="inputGroup-sizing-lg"
+    />
+    <button
+      ngbButton
+      class="btn btn-outline-secondary"
+      (click)="findUser(gitSearch.value)"
+      type="button"
+    >
+      Search
+    </button>
+  </div>
 
-<div class="output">
-  {{ userName }}
-  <h2>{{ userName.name || userName.login }}</h2>
-</div>
+  <div class="output">
+    {{ userName }}
+    <h2>{{ userName.name || userName.login }}</h2>
+  </div>
+</body>
