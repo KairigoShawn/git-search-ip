@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { profile } from 'console';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-  // private url = 'https://api.github.com/users/daneden?access_token=' + apiKey //
+  private BASE_URL = 'https://api.github.com';
+  private token = "token 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";
 
-  constructor(http: HttpClient)  {
+  constructor(private http: HttpClient)  {}
 
+  //findUser
+
+  async user(username?: string){
+    const option = {
+      headers: {Authorization: this.token}
+    };
+
+    return this.http.get(this.BASE_URL + `/users/${username}`, option);
   }
 }
