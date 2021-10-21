@@ -8,6 +8,7 @@ import { ProfileService } from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
   userName! : any;
+  userRepo! : any;
 
   constructor(private http: ProfileService) { }
 
@@ -15,8 +16,18 @@ export class ProfileComponent implements OnInit {
 
 
     (await this.http.user(user)).subscribe((data: any) => {
-      
+
       this.userName = { ...data };
+    });
+
+  }
+
+  async findRepo(repo: any){
+
+
+    (await this.http.repo(repo)).subscribe((data: any) => {
+
+      this.userRepo = { ...data };
     });
 
   }
