@@ -34,5 +34,14 @@
       Search
     </button>
   </div>
+  <div class="output" *ngIf="userInfo && userInfo.login; then userinfo else null"></div>
+  <ng-template #userinfo>
+    <img src="{{userInfo.avatar_url}}" alt="">
+    <h2>{{ userInfo.name || userInfo.login }}</h2>
+    <p>{{userInfo.bio}}</p>
+    <p>Followers: {{userInfo.followers}} <span>Following: {{userInfo.following}}</span></p>
+    <p>Repositories: {{userInfo.public_repos}}</p>
+
+  </ng-template>
   
 </body>
