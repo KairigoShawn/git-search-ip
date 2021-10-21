@@ -7,17 +7,33 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userName! : any;
-  userRepo! : any;
+  userInfo!: any;
+  userRepo = [];
+  radio = {
+    userInfo: '',
+    usersRepos: '',
+  };
+  radioSelected = '';
 
   constructor(private http: ProfileService) { }
 
   async findUser(user: any){
-
-
     (await this.http.user(user)).subscribe((data: any) => {
+      this.userInfo = { ...data };
+    });
+  }
 
-      this.userName = { ...data };
+  async searchGithub(username: string) {
+    if(this.radioSelected === 'user_repository'){
+      return (await this.http.repo(username)).subscribe((data: any) => {
+        this.userRepo = data;
+        console.log(data);
+
+      });
+    }
+
+    return (await this.http.user(username)).subscribe((data: any) => {
+      this.userInfo = { ...data };
     });
 
   }
@@ -27,9 +43,13 @@ export class ProfileComponent implements OnInit {
 
     (await this.http.repo(repo)).subscribe((data: any) => {
 
-      this.userRepo = { ...data };
+      this.userRepo = data;
     });
 
+  }
+
+  onRadioSelected(e: any) {
+    this.radioSelected = e.target.value;
   }
 
   ngOnInit(): void {
