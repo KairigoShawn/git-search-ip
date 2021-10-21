@@ -22,4 +22,11 @@ export class ProfileService {
     return this.http.get(this.BASE_URL + `/${username}`, option);
   }
 
+  async repo(username?: string){
+    const option = {
+      headers: { Authorization: this.token }
+    };
+
+    return this.http.get(this.BASE_URL + `/${username}/repos`, option);
+  }
 }
