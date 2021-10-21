@@ -13,9 +13,9 @@ export class ProfileComponent implements OnInit {
 
   async findUser(user: any){
 
-    console.log('User ::', user);
+
     (await this.http.user(user)).subscribe((data: any) => {
-      console.log(data);
+      
       this.userName = { ...data };
     });
 
