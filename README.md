@@ -1,11 +1,15 @@
-# Project-Name
+# GIT SEARCH ENGINE by Shawn Kairigo
 
-Write the project description here...
+This application uses the github api to allow you to search for users as well as their repositories on github.
 
 
 ## Technologies Used
 
-- Add technologies you may have used in the project e.g HTML & CSS (Bootstrap)
+TypeScript
+HTML
+JavaScript
+CSS
+Bootstrap
 
 
 ##### Setup Instructions and Installation
@@ -37,7 +41,7 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 ### License
 
 *MIT*
-Copyright (c) 2021 **Your name**
+Copyright (c) 2021 **Shawn Kairigo**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
